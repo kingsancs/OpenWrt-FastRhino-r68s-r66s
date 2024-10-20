@@ -20,7 +20,7 @@ on:
         default: 'false'
         
 # 定时触发编译(每月1日早3点)
-  #schedule:
+  schedule:
     - cron: 0 17 2,12,22 * *
 
 env:
