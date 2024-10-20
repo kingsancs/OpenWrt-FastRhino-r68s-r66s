@@ -16,11 +16,11 @@ on:
     inputs:
       ssh:
         description: 'SSH connection to Actions'
-        required: false
+        required: true
         default: 'false'
         
 # 定时触发编译(每月1日早3点)
-  schedule:
+  #schedule:
     - cron: 0 17 2,12,22 * *
 
 env:
@@ -35,11 +35,10 @@ env:
   UPLOAD_RELEASE: true
   GITHUB_TOKEN: ${{ secrets.GIT_USER_TOKEN }}
   TZ: Asia/Shanghai
-  KERNEL_VERSION: 6.1.79
-
+  
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04
 
     steps:
     - name: 释放Ubuntu磁盘空间
